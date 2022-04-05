@@ -1,0 +1,39 @@
+.technologies {
+  width: 100%;
+  height: auto;
+  color: white;
+  /* color: #0fb7c0; */
+  margin-left: 4.5%;
+}
+.technologies_Info {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+.technologies_Info li {
+  list-style-type: none;
+  text-align: center;
+  margin-right: 6%;
+}
+.technologiesTwo_Info {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+.technologiesTwo_Info li {
+  list-style-type: none;
+  text-align: center;
+  margin-right: 6%;
+  margin-top: 4%;
+}
+
+.technologies_header {
+  margin-left: 8%;
+}
+/* .tex_Info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+} */

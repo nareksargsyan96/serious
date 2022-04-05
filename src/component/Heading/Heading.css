@@ -1,0 +1,31 @@
+@import url("http://fonts.cdnfonts.com/css/mont");
+
+.header {
+  width: 952px;
+  font-family: "Mont";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 78px;
+  line-height: 101px;
+  color: #0fb7c0;
+  margin-bottom: 24px;
+  margin-top: 2%;
+}
+.subtitle {
+  font-family: "Mont";
+  font-style: normal;
+  font-weight: 950;
+  font-size: 24px;
+  line-height: 31px;
+  color: white;
+}
+.info_text {
+  height: 125px;
+  color: white;
+  font-family: "Mont";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  margin-top: 18px;
+}

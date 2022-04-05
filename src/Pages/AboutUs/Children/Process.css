@@ -1,0 +1,16 @@
+.process {
+  font-size: 260%;
+}
+.process_info {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  color: #ffffff;
+}
+.process_info li {
+  margin-right: 4%;
+  list-style-type: none;
+}
+.title {
+  color: #0fb7c0;
+}

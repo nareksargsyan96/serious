@@ -1,0 +1,23 @@
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header sidebar"
+    "content sidebar"
+    "content sidebar";
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 127px 1fr;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content_children {
+  height: 100vh;
+}
