@@ -6,7 +6,7 @@ import { mainRoutes } from "../Routes/mainRoutes";
 export const useScroll = (ref) => {
   const [down, setDown] = useState(0);
   const [scrollTop, setScrollTop] = useState(0);
-  let location = useLocation();
+  let { pathname } = useLocation();
 
   let newMainRoutest = [];
   mainRoutes.map((item) => {
@@ -30,7 +30,7 @@ export const useScroll = (ref) => {
             let nextPath = 0;
 
             newMainRoutest?.forEach((item, index) => {
-              if (item.path === location.pathname) {
+              if (item.path === pathname) {
                 nextPath = index;
               }
             });
@@ -52,7 +52,7 @@ export const useScroll = (ref) => {
             let previousPath;
 
             newMainRoutest?.forEach((item, index) => {
-              if (item.path === location.pathname) {
+              if (item.path === pathname) {
                 previousPath = index;
               }
             });
@@ -75,5 +75,5 @@ export const useScroll = (ref) => {
     return () => {
       window.removeEventListener("wheel", scrollListener);
     };
-  }, [down, scrollTop, location.pathname]);
+  }, [down, scrollTop, pathname]);
 };
