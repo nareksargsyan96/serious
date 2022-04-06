@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ReactComponent as Logo } from "../../Img/SeriousLogo.svg";
 import { NavLink, useLocation } from "react-router-dom";
-import { mainRoutes } from "./../../Routes/mainRoutes";
+// import { mainRoutes } from "./../../Routes/mainRoutes";
+import { useActiveLink } from "../../hooks/useActiveLink";
 
 import "./Header.css";
 
 export const Header = () => {
   const { pathname } = useLocation();
-  const {} = useActiveLink("/")
 
-  
+  const { newMainRoutes } = useActiveLink(pathname);
 
   return (
     <div className="header_line">
@@ -19,13 +19,12 @@ export const Header = () => {
 
       <div className="navigation">
         <ul className="header_links">
-          {mainRoutes.map((item, index) => {
+          {newMainRoutes.map((item, index) => {
             return (
               <li className="menu_name" key={index}>
                 <NavLink
                   to={item.path}
-                  className={"menu_link"}
-                  activeClassName={"activ"}
+                  className={`menu_link ${item.isActive && "active"}`}
                   style={
                     item.children && pathname.includes(item.path)
                       ? { color: "#0fb7c0" }
@@ -33,18 +32,28 @@ export const Header = () => {
                   }
                   exact={item.exact}
                 >
-                  {item.name}
+                  {item.text}
                 </NavLink>
                 {item?.children && (
                   <div className="header_child">
-                    <div className="header_child_line"></div>
+                    <NavLink
+                      to={item.path}
+                      className={
+                        item.isActive
+                          ? "header_child_line_active"
+                          : "header_child_line"
+                      }
+                    ></NavLink>
                     {item.children?.map((item) => (
-                      <div
+                      <NavLink
+                        to={item.path}
                         key={item.path}
                         className={`header_child_line ${
-                          isActiveAboutFirst ? "sasasasasa" : ""
+                          item.isActive ? "isActive" : "hide_isActive"
                         }`}
-                      />
+                      >
+                        <span></span>
+                      </NavLink>
                     ))}
                   </div>
                 )}

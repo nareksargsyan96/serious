@@ -1,5 +1,6 @@
 import { ServicesComponentRow } from "../../../../component/ServicesComponent/ServicesComponentRow";
 import { ReactComponent as SoftwareImg } from "../../../../Img/Services/Software.svg";
+import Slide from "react-reveal/Slide";
 
 // import "./Software.css";
 
@@ -10,14 +11,16 @@ export const Software = () => {
   let title2 = "Development";
 
   return (
-    <div className="main_services">
-      <ServicesComponentRow
-        class_name={"flex-revers servicesSubtitle"}
-        img={<SoftwareImg />}
-        mainTitle={title1}
-        mainTitle2={title2}
-        text={text}
-      ></ServicesComponentRow>
-    </div>
+    <Slide left>
+      <div className="main_services">
+        <ServicesComponentRow
+          class_name={"flex-revers servicesSubtitle"}
+          img={<SoftwareImg />}
+          mainTitle={title1}
+          mainTitle2={title2}
+          text={text}
+        ></ServicesComponentRow>
+      </div>
+    </Slide>
   );
 };

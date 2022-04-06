@@ -1,4 +1,5 @@
 .footer {
+  
   width: 100%;
   height: 150px;
   display: flex;
@@ -14,6 +15,7 @@
 } */
 
 .foter_Line {
+
   transition: 0.5s;
   display: flex;
   justify-content: center;
@@ -27,6 +29,7 @@
   background: rgba(242, 242, 242, 0.2);
 }
 .foter_Line_but {
+
   background-color: black;
   border: none;
 }

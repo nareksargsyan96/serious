@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { Heading } from "../../component/Heading/Heading";
+import Slide from "react-reveal/Slide";
 
 import { ReactComponent as JavaScript } from "../../Img/Technologies/javascript.svg";
 import { ReactComponent as ReactTech } from "../../Img/Technologies/react.svg";
@@ -18,7 +19,6 @@ import { ReactComponent as Python } from "../../Img/Technologies/icons8-python.s
 import { ReactComponent as Vue } from "../../Img/Technologies/icons8-vue-js.svg";
 
 import "./Technologies.css";
-
 
 export const Technologies = () => {
   const technologiesOne = useMemo(() => [
@@ -41,32 +41,40 @@ export const Technologies = () => {
     { name: "Postgresql", img: <Postgresql /> },
   ]);
   return (
-    <div className="tex_Info">
-      <Heading variant="h1" className="header technologies_header">
-        Technologies
-      </Heading>
-      <div className="technologies">
-        <ul className="technologies_Info">
-          {technologiesOne.map((item, index) => {
-            return (
-              <li key={index}>
-                <div> {item.img} </div>
-                <div> {item.name} </div>
-              </li>
-            );
-          })}
-        </ul>
-        <ul className="technologiesTwo_Info">
-          {technologiesTwo.map((item, index) => {
-            return (
-              <li key={index}>
-                <div> {item.img} </div>
-                <div> {item.name} </div>
-              </li>
-            );
-          })}
-        </ul>
+    <Slide left>
+      <div className="tex_Info">
+        <Heading variant="h1" className="header technologies_header">
+          Technologies
+        </Heading>
+        <div className="technologies">
+          <div classname="technologies_items">
+            <div>
+              <ul className="technologies_Info">
+                {technologiesOne.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <div> {item.img} </div>
+                      <div> {item.name} </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            <div>
+              <ul className="technologiesTwo_Info">
+                {technologiesTwo.map((item, index) => {
+                  return (
+                    <li key={index}>
+                      <div> {item.img} </div>
+                      <div> {item.name} </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </Slide>
   );
 };

@@ -1,6 +1,8 @@
 import React from "react";
 import { Heading } from "./../../../component/Heading/Heading";
 import { FaCode } from "react-icons/fa";
+import Slide from "react-reveal/Slide";
+
 import "./Process.css";
 
 export const Process = () => {
@@ -23,25 +25,27 @@ export const Process = () => {
     },
   ];
   return (
-    <div className="main_content">
-      <Heading variant="h1" className="header process">
-        We Simplify Software Development Process
-      </Heading>
-      <div>
-        <ul className="process_info">
-          {process.map((item) => {
-            return (
-              <li>
-                <div>
-                  <FaCode />
-                  <h1 className={"title"}>{item.title}</h1>
-                </div>
-                <div>{item.text}</div>
-              </li>
-            );
-          })}
-        </ul>
+    <Slide left>
+      <div className="main_content">
+        <Heading variant="h1" className="header process">
+          We Simplify Software Development Process
+        </Heading>
+        <div>
+          <ul className="process_info">
+            {process.map((item) => {
+              return (
+                <li>
+                  <div>
+                    <FaCode />
+                    <h1 className={"title"}>{item.title}</h1>
+                  </div>
+                  <div>{item.text}</div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
-    </div>
+    </Slide>
   );
 };

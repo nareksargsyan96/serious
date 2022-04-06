@@ -9,11 +9,14 @@ import { Automation } from "./../Pages/Services/Children/Automation/Automation";
 import { CeoSmm } from "./../Pages/Services/Children/CeoSmm/CeoSmm";
 import { Contact } from "../Pages/Contact/Contact";
 import { Clients } from "../Pages/Clients/Clients";
+import { Courses } from "../Pages/Courses/Courses";
 
 export const mainRoutes = [
   {
-    name: "Home",
+    name: "home",
+    text: "Home",
     path: "/",
+    isActive: false,
     exact: true,
     component: () => <Home />,
   },
@@ -21,64 +24,83 @@ export const mainRoutes = [
     name: "aboutUs",
     text: "About Us",
     path: "/about",
+    isActive: false,
     exact: true,
     component: () => <AboutUs />,
     children: [
       {
         name: "Process",
         path: "/about/process",
+        isActive: false,
         exact: false,
         component: () => <Process />,
       },
     ],
   },
   {
-    name: "Technologies",
+    name: "technologies",
+    text: "Technologies",
     path: "/technologies",
+    isActive: false,
     exact: false,
     component: () => <Technologies />,
   },
   {
-    name: "Services",
+    name: "services",
+    text: "Services",
     path: "/services",
+    isActive: false,
     exact: true,
     component: () => <Services />,
     children: [
       {
-        name: "ServicesMo",
+        name: "servicesMo",
+        text: "ServicesMo",
         path: "/services/mobile",
+        isActive: false,
         exact: false,
         component: () => <ServicesMobile />,
       },
       {
-        name: "Software",
+        name: "software",
+        text: "Software",
         path: "/services/software",
+        isActive: false,
         exact: false,
         component: () => <Software />,
       },
       {
         name: "automation",
+        text: "Automation",
         path: "/services/automation",
+        isActive: false,
         exact: false,
         component: () => <Automation />,
       },
       {
-        name: "automation",
-        path: "/services/soe&smm",
+        name: "soesmm",
+        text: "SoeSmm",
+        path: "/services/soesmm",
+        isActive: false,
         exact: false,
         component: () => <CeoSmm />,
       },
     ],
   },
   {
-    name: "Clients",
+    name: "clients",
+    text: "Clients",
     path: "/clients",
+    isActive: false,
     exact: false,
     component: () => <Clients />,
   },
+
   {
-    name: "Contact",
+    name: "contact",
+    text: "Contact",
     path: "/contact",
+    isActive: false,
     exact: false,
     component: () => <Contact />,
   },

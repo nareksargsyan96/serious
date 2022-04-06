@@ -23,8 +23,8 @@
 .menu_link {
   text-decoration: none;
   color: #f2f2f2;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 112%;
+  font-weight: 400;
 }
 .menu_link:hover {
   color: #0fb7c0;
@@ -39,17 +39,51 @@
   flex-direction: column;
 }
 
-.activ {
+.active {
   color: #0fb7c0;
 }
-.header_child{
+.header_child {
   display: flex;
-
 }
 .header_child_line {
   border: none;
-  height: 2px;
+  height: 3px;
+  background-color: white;
+  width: 20%;
+  margin: 1px;
+}
+.header_child_line_active {
+  cursor: pointer;
+  border: none;
+  height: 3px;
   background-color: #0fb7c0;
   width: 20%;
   margin: 1px;
 }
+.header_child_line:hover {
+  cursor: pointer;
+  background-color: #0fb7c0;
+}
+.isActive {
+  border: none;
+  height: 3px;
+  background-color: #0fb7c0;
+  width: 20%;
+  margin: 1px;
+}
+.header_child_line_active {
+  border: none;
+  height: 3px;
+  background-color: #0fb7c0;
+  width: 20%;
+  margin: 1px;
+}
+
+.header_child_line_activ .hide_isActive {
+  border: none;
+  height: 3px;
+  background-color: grey;
+  width: 20%;
+  margin: 1px;
+}
+

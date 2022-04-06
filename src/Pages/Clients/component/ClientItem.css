@@ -1,0 +1,11 @@
+.client {
+  width: 200px;
+  height: 200px;
+  /* background: linear-gradient(to right, #6767fc, #0fb7c0); */
+  background-color: #6767fc;
+  border: 2px solid #0fb7c0;
+  border-radius: 50%;
+}
+.client:hover {
+  background: white;
+}
