@@ -1,22 +1,20 @@
 .header {
   font-weight: 900;
-  font-size: 4.5em;
-  line-height: 101px;
+  font-size: calc(var(--large) + 50px);
   color: #0fb7c0;
-  margin-bottom: 24px;
+  margin-bottom: 5%;
   margin-top: 2%;
 }
 .subtitle {
   font-weight: 950;
-  font-size: 144%;
+  font-size: calc(var(--textSize) + 7px);
   line-height: 31px;
   color: white;
 }
 .info_text {
-  height: 125px;
   color: white;
   font-weight: 400;
-  font-size: 144%;
+  font-size: calc(var(--textSize) + 7px);
   line-height: 130%;
   margin-top: 18px;
 }

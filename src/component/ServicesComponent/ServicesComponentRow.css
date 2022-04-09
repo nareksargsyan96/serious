@@ -1,11 +1,8 @@
-@import url("http://fonts.cdnfonts.com/css/mont");
-
 .main_servis {
   width: 100%;
   display: flex;
 }
 .flex-row {
-  margin-left: 1%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -22,7 +19,6 @@
   margin-top: 6%;
 }
 .flex-revers {
-  margin-left: 1%;
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: nowrap;
@@ -33,19 +29,15 @@
   flex-direction: column;
   margin-top: 7%;
   width: 48%;
-  /* align-items: end; */
 }
 .servis-text {
   color: white;
 }
 .flex-revers .servis-img {
   margin-top: 6%;
-  /* margin-left: 1%; */
 }
 .mainTitle {
-  font-family: "Mont";
-  font-style: normal;
-  font-size: 4.9em;
+  font-size: calc(var(--title) + 50px);
   font-weight: 900;
   color: white;
 }

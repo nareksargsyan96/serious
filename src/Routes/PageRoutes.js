@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
-import { mainRoutes } from "./mainRoutes";
+import mainRoutes from "./mainRoutes";
 
 const PageRoutes = ({}) => {
   //token

@@ -1,24 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Header } from "./../Header/Header";
-import Sidebar from "./../Sidebar/Sidebar";
+import { Sidebar } from "./../Sidebar/Sidebar";
 import { Footer } from "../Footer/Footer";
 import { useScroll } from "./../../hooks/useScroll";
+import { HeaderMobile } from "../Header/HeaderMobile/HeaderMobile";
 
 import "./Layout.css";
+import { useWindowSIze } from "../../hooks/useWindowSIze";
 
 const Layout = ({ children }) => {
+  const size = useWindowSIze();
   useScroll();
+  const [showFooter, setShowFooter] = useState(false);
+  const [showRightBar, setShowRightBar] = useState(false);
+
+  useEffect(() => {
+    if (size) {
+      setShowRightBar(false);
+    }
+  }, [size]);
 
   return (
     <div className="layout">
-      <Sidebar />
-      <Header />
+      {size && <Sidebar />}
+      <Header showItems={size} toggleShowRightBar={setShowRightBar} />
+
+      <HeaderMobile
+        showRightBar={showRightBar}
+        toggleShowRightBar={setShowRightBar}
+      />
 
       <div className="content">
         <div className="content_children">{children}</div>
-
-        <Footer />
       </div>
+
+      <Footer showFooter={showFooter} toggleShow={setShowFooter} />
     </div>
   );
 };

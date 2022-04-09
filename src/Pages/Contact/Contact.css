@@ -38,17 +38,16 @@
 .contact_phone {
   display: flex;
   align-items: center;
-  margin-right: 4%;
+  gap: 16px;
 }
 .contact_email {
   display: flex;
+  gap: 16px;
 }
+
 .contact_form div span {
   display: flex;
   align-items: center;
-}
-span {
-  margin-left: 5px;
 }
 form {
   margin-top: 5%;

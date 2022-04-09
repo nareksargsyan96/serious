@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { history } from "./history";
 import { useLocation } from "react-router-dom";
-import { mainRoutes } from "../Routes/mainRoutes";
+import mainRoutes from "../Routes/mainRoutes";
 
 export const useScroll = (ref) => {
   const [down, setDown] = useState(0);

@@ -6,7 +6,6 @@ import Slide from "react-reveal/Slide";
 // import { AddUser } from "../../../redux/user/actions";
 import { GoogleMapComponent } from "../../component/GoogleMapComponent/GoogleMapComponent";
 import { userValidationSchema } from "./userValidation";
-import { CustomInput } from "../../../src/component/CustomInput/CustomInput";
 import { ReactComponent as PhoneIcon } from "../../Img/contactPhone.svg";
 import { ReactComponent as EmailIcon } from "../../Img/contactEmail.svg";
 
@@ -15,8 +14,8 @@ import "./Contact.css";
 export const Contact = () => {
   //   const dispatch = useDispatch();
   return (
-    // <Slide left>
-      <div className="contact_us ">
+    <Slide left>
+      <div className="contact_us">
         <div className="contact_map">
           <GoogleMapComponent isMarkerShown />
         </div>
@@ -24,11 +23,15 @@ export const Contact = () => {
           <div className="contact_title">Contact Us</div>
           <div className="contact_info">
             <div className="contact_phone">
-              <PhoneIcon />
+              <div className="contact__phone-icon">
+                <PhoneIcon />
+              </div>
               <span>+374(41) 00-00-25</span>
             </div>
             <div className="contact_email">
-              <EmailIcon />
+              <div className="contact__phone-icon">
+                <EmailIcon />
+              </div>
               <span>info@serious.am</span>
             </div>
           </div>
@@ -40,14 +43,13 @@ export const Contact = () => {
               phone: "",
             }}
             validationSchema={userValidationSchema}
-            onSubmit={(values) => {
-              console.log(values);
-              const userInfo = [
-                values.Name,
-                values.email,
-                values.message,
-                values.phone,
-              ];
+            onSubmit={() => {
+              // const userInfo = [
+              //   values.Name,
+              //   values.email,
+              //   values.message,
+              //   values.phone,
+              // ];
               //   localStorage.setItem("user", JSON.stringify(values));
               //   dispatch(AddUser(userInfo));
             }}
@@ -116,6 +118,6 @@ export const Contact = () => {
           </Formik>
         </div>
       </div>
-    // </Slide>
+    </Slide>
   );
 };

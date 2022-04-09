@@ -12,7 +12,6 @@ export const ServicesComponentRow = (props) => {
           <span className="subtitle">{props.mainTitle2}</span>
           <span className="secondText">{props.text}</span>
         </div>
-        
       </div>
     </div>
   );

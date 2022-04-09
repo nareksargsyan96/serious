@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
 import { Heading } from "../../component/Heading/Heading";
+import { useTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
 
 import { ReactComponent as JavaScript } from "../../Img/Technologies/javascript.svg";
@@ -17,10 +18,11 @@ import { ReactComponent as PhpLogo } from "../../Img/Technologies/icons8-php-log
 import { ReactComponent as Postgresql } from "../../Img/Technologies/icons8-postgresql.svg";
 import { ReactComponent as Python } from "../../Img/Technologies/icons8-python.svg";
 import { ReactComponent as Vue } from "../../Img/Technologies/icons8-vue-js.svg";
-
 import "./Technologies.css";
 
 export const Technologies = () => {
+  const { t } = useTranslation();
+
   const technologiesOne = useMemo(() => [
     { name: "JavaScript", img: <JavaScript /> },
     { name: "React", img: <ReactTech /> },
@@ -42,35 +44,21 @@ export const Technologies = () => {
   ]);
   return (
     <Slide left>
-      <div className="tex_Info">
-        <Heading variant="h1" className="header technologies_header">
-          Technologies
-        </Heading>
+      <div className="technologies_wrapper">
+        <div>
+          <Heading variant="h1" className="header technologies_header">
+            {t("technologies")}
+          </Heading>
+        </div>
         <div className="technologies">
-          <div classname="technologies_items">
-            <div>
-              <ul className="technologies_Info">
-                {technologiesOne.map((item, index) => {
-                  return (
-                    <li key={index}>
-                      <div> {item.img} </div>
-                      <div> {item.name} </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <div>
-              <ul className="technologiesTwo_Info">
-                {technologiesTwo.map((item, index) => {
-                  return (
-                    <li key={index}>
-                      <div> {item.img} </div>
-                      <div> {item.name} </div>
-                    </li>
-                  );
-                })}
-              </ul>
+          <div className="technologies_items">
+            <div className="technologies_Info">
+              {[...technologiesOne, ...technologiesTwo].map((item, index) => (
+                <div key={index}>
+                  <div> {item.img} </div>
+                  <div> {item.name} </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

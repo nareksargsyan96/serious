@@ -1,22 +1,27 @@
-import React from 'react'
-import {ReactComponent as BurgerImges} from "../../Img/menu.svg";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-import "./Sidebar.css"
+import "./Sidebar.css";
 
-const Sidebar = () => {
+export const Sidebar = () => {
+  const { i18n } = useTranslation();
+  const changeLang = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
   return (
     <div className="sidebar">
-        <div className="burger_imges">
-            <BurgerImges />
-        </div>
-        <ul className="traslate" >
-            <li className="traslate_link">ENG</li>
-            <li className="traslate_link">RUS</li>
-            <li className="traslate_link">ARM</li>
-        </ul>
+      <ul className="traslate">
+        <li className="traslate_link" onClick={() => changeLang("en")}>
+          ENG
+        </li>
+        <li className="traslate_link" onClick={() => changeLang("rus")}>
+          RUS
+        </li>
+        <li className="traslate_link" onClick={() => changeLang("hy")}>
+          ARM
+        </li>
+      </ul>
     </div>
-
-  )
-}
-
-export default Sidebar
+  );
+};

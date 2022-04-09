@@ -1,12 +1,13 @@
 import { ServicesComponentRow } from "../../component/ServicesComponent/ServicesComponentRow";
 import { ReactComponent as Group } from "../../Img/Services/Group.svg";
+import { useTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
 
 import "./Services.css";
 
 export const Services = () => {
-  let text =
-    "Ut at porta velit, non facilisis ante. Ut at augue a purus imperdiet tempus sit amet vitae urna. Integer varius eget nisl eget vulputate. Vivamus consequat, purus et lobortis mattis, turpis odio malesuada velit, eget viverra mi nisl vel enim. Quisque ullamcorper tortor lobortis.";
+  const { t } = useTranslation();
+  let text = t("Web_design_development_text");
   let title1 = "Web design &";
   let title2 = "Development";
 

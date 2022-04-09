@@ -9,19 +9,19 @@ export const Process = () => {
   const process = [
     {
       title: "Discover",
-      text: "We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.",
+      text: "Exploration is how we shape brands, and we use in-depth research to challenge assumptions at every stage.",
     },
     {
       title: "Design",
-      text: "Our design approach is to simplify. We embrace the joy in creating something unique that is easy for end users.",
+      text: "Our design philosophy is to keep things simple. We like the satisfaction of developing something unique that is simple for end consumers.",
     },
     {
       title: "Build",
-      text: "Using modern technologies, we build with efficiency and skill, creating flexible and scalable business-driven solutions.",
+      text: "We create with efficiency and skill, providing adaptable and scalable business-driven solutions, using modern technologies.",
     },
     {
       title: "Deliver",
-      text: "We take an iterative approach to both our work and our practice, always looking for ways to improve what we do.",
+      text: "We approach both our work and our practice in an iterative manner, continuously searching for ways to better what we do.",
     },
   ];
   return (
@@ -31,19 +31,19 @@ export const Process = () => {
           We Simplify Software Development Process
         </Heading>
         <div>
-          <ul className="process_info">
+          <div className="process_info">
             {process.map((item) => {
               return (
-                <li>
-                  <div>
+                <div>
+                  <div className="process_icons">
                     <FaCode />
                     <h1 className={"title"}>{item.title}</h1>
                   </div>
                   <div>{item.text}</div>
-                </li>
+                </div>
               );
             })}
-          </ul>
+          </div>
         </div>
       </div>
     </Slide>

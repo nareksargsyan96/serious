@@ -1,5 +1,5 @@
 .process {
-  font-size: 260%;
+  font-size: calc(var(--large) + 15px);
 }
 .process_info {
   display: flex;
@@ -7,10 +7,13 @@
   flex-direction: row;
   color: #ffffff;
 }
-.process_info li {
+.process_info div {
   margin-right: 4%;
-  list-style-type: none;
 }
 .title {
-  color: #0fb7c0;
+  color: white;
+  font-size: calc(var(--processTitle) + 5px);
+}
+.process_icons {
+  font-size: calc(var(--processTitle) + 5px);
 }

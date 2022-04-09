@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { mainRoutes } from "../Routes/mainRoutes";
+import mainRoutes from "../Routes/mainRoutes";
 
 export const useActiveLink = (path) => {
   const [newMainRoutes, setNewMainRoutes] = useState([]);

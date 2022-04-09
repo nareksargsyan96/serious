@@ -1,12 +1,13 @@
 import { ServicesComponentRow } from "../../../../component/ServicesComponent/ServicesComponentRow";
 import { ReactComponent as AutomationImg } from "../../../../Img/Services/Automation.svg";
 import Slide from "react-reveal/Slide";
+import { useTranslation } from "react-i18next";
 
 import "./Automation.css";
 
 export const Automation = () => {
-  let text =
-    "Ut at porta velit, non facilisis ante. Ut at augue a purus imperdiet tempus sit amet vitae urna. Integer varius eget nisl eget vulputate. Vivamus consequat, purus et lobortis mattis, turpis odio malesuada velit, eget viverra mi nisl vel enim. Quisque ullamcorper tortor lobortis.";
+  const { t } = useTranslation();
+  let text = t("CRM_text");
   let title1 = "Business Automation &";
   let title2 = "CRM Development";
 

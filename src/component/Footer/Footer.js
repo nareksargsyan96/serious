@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Bounce from "react-reveal/Bounce";
 
 import { ReactComponent as LineDown } from "../../Img/lineDown.svg";
@@ -11,12 +11,9 @@ import { ReactComponent as Facebook } from "../../Img/fb.svg";
 import { ReactComponent as Instagram } from "../../Img/instagram.svg";
 import { ReactComponent as WhatsApp } from "../../Img/whatsApp.svg";
 
-// import Tilt from "react-parallax-tilt";
 import "./Footer.css";
 
-export const Footer = () => {
-  const [show, setShow] = useState(false);
-
+export const Footer = ({ showFooter, toggleShow }) => {
   const footerSocial = [
     {
       link: "#",
@@ -48,24 +45,24 @@ export const Footer = () => {
     },
   ];
   const handleClick = () => {
-    if (show) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+    toggleShow(!showFooter);
   };
   return (
     <div className="footer">
-      <div className="foter_Line">
-        <button className="foter_Line_but" type="button" onClick={handleClick}>
-          {show ? <LineDown /> : <LineUp />}
+      <div className="footer_Line">
+        <button className="footer_Line_but" type="button" onClick={handleClick}>
+          <div className="footer__btn-icon">
+            {showFooter ? <LineDown /> : <LineUp />}
+          </div>
+          <span className="footer__btn-name">FOOTER</span>
         </button>
-        <div className="footer_name">FOOTER</div>
       </div>
       <div
-        className={show ? "bounce_footer_modal" : "bounce_footer_modal_close"}
+        className={
+          showFooter ? "bounce_footer_modal" : "bounce_footer_modal_close"
+        }
       >
-        <Bounce bottom opposite collapse when={show}>
+        <Bounce bottom opposite collapse when={showFooter}>
           <div className="footer_modal">
             <ul className="footer_social">
               {footerSocial.map((item, index) => {
@@ -76,17 +73,6 @@ export const Footer = () => {
                 );
               })}
             </ul>
-            {/* <Tilt
-                className="track-on-window"
-                perspective={500}
-                glareEnable={true}
-                glareMaxOpacity={0.75}
-                glarePosition="all"
-                scale={1.02}
-                trackOnWindow={true}
-              >
-                
-              </Tilt> */}
           </div>
         </Bounce>
       </div>
