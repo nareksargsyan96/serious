@@ -1,0 +1,33 @@
+@import "../../assets/styles/mixins.scss";
+
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "content sidebar"
+    "content sidebar"
+    "footer sidebar";
+  grid-template-columns: 1fr 127px;
+  grid-template-rows: 127px 1fr;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+}
+.content_children {
+  height: 100vh;
+}
+
+@include x-tablet {
+  .layout{
+    grid-template-columns: 1fr 0px;
+  }
+}

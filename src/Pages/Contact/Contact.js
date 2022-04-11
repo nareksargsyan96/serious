@@ -1,111 +1,73 @@
-import React from "react";
-import { Formik, Field, Form } from "formik";
-import Slide from "react-reveal/Slide";
+import React from 'react';
+import { Formik, Field, Form } from 'formik';
+import Slide from 'react-reveal/Slide';
 
-// import { useDispatch } from "react-redux";
-// import { AddUser } from "../../../redux/user/actions";
-import { GoogleMapComponent } from "../../component/GoogleMapComponent/GoogleMapComponent";
-import { userValidationSchema } from "./userValidation";
-import { ReactComponent as PhoneIcon } from "../../Img/contactPhone.svg";
-import { ReactComponent as EmailIcon } from "../../Img/contactEmail.svg";
+import { GoogleMapComponent } from '../../component/GoogleMapComponent/GoogleMapComponent';
+import { Button } from '../../component/Button/Button';
+import { ReactComponent as PhoneIcon } from '../../assets/images/contactPhone.svg';
+import { ReactComponent as EmailIcon } from '../../assets/images/contactEmail.svg';
 
-import "./Contact.css";
+import styles from './Contact.module.scss';
 
 export const Contact = () => {
-  //   const dispatch = useDispatch();
   return (
     <Slide left>
-      <div className="contact_us">
-        <div className="contact_map">
+      <div className={styles.contact_us}>
+        <div className={styles.contact_map}>
           <GoogleMapComponent isMarkerShown />
         </div>
-        <div className="contact_form">
-          <div className="contact_title">Contact Us</div>
-          <div className="contact_info">
-            <div className="contact_phone">
-              <div className="contact__phone-icon">
+        <div className={styles.contact_form}>
+          <div className={styles.contact_title}>Contact Us</div>
+          <div className={styles.contact_info}>
+            <div className={styles.contact_item}>
+              <div className={styles.contact__itemIcon}>
                 <PhoneIcon />
               </div>
-              <span>+374(41) 00-00-25</span>
+              <p>+374(41) 00-00-25</p>
             </div>
-            <div className="contact_email">
-              <div className="contact__phone-icon">
+            <div className={styles.contact_item}>
+              <div className={styles.contact__itemIcon}>
                 <EmailIcon />
               </div>
-              <span>info@serious.am</span>
+              <p>info@serious.am</p>
             </div>
           </div>
           <Formik
             initialValues={{
-              Name: "",
-              email: "",
-              message: "",
-              phone: "",
+              name: '',
+              email: '',
+              message: '',
+              phone: '',
             }}
-            validationSchema={userValidationSchema}
-            onSubmit={() => {
-              // const userInfo = [
-              //   values.Name,
-              //   values.email,
-              //   values.message,
-              //   values.phone,
-              // ];
-              //   localStorage.setItem("user", JSON.stringify(values));
-              //   dispatch(AddUser(userInfo));
-            }}
+            onSubmit={(data) => console.log(data)}
           >
-            {({ errors, touched }) => (
+            {({ errors, touched, dirty }) => (
               <Form>
-                {console.log(errors)}
                 <div>
-                  {/* <span> Name* </span> */}
-                  <Field
-                    name="Name"
-                    placeholder="Name*"
-                    className="form_input"
-                  />
-                  {errors.Name && touched.Name ? (
-                    <div>{errors.Name}</div>
-                  ) : null}
+                  <Field name="name" placeholder="Name*" className={styles.form_input} />
+                  {errors.Name && touched.name ? <p>{errors.name}</p> : null}
                 </div>
                 <div>
-                  {/* <span> Email* </span> */}
                   <Field
                     name="email"
                     type="email"
                     placeholder="Email*"
-                    className="form_input"
+                    className={styles.form_input}
                   />
-                  {errors.email && touched.email ? (
-                    <div>{errors.email}</div>
-                  ) : null}
+                  {errors.email && touched.email ? <p>{errors.email}</p> : null}
                 </div>
                 <div>
-                  {/* <span> Message* </span> */}
-                  <Field
-                    name="message"
-                    placeholder="Message*"
-                    className="form_input"
-                  />
-                  {errors.message && touched.message ? (
-                    <div>{errors.message}</div>
-                  ) : null}
+                  <Field name="message" placeholder="Message*" className={styles.form_input} />
+                  {errors.message && touched.message ? <p>{errors.message}</p> : null}
                 </div>
                 <div>
-                  {/* <span> Message* </span> */}
-                  <Field
-                    name="Phone"
-                    placeholder="Phone*"
-                    className="form_input"
-                  />
-                  {errors.phone && touched.phone ? (
-                    <div>{errors.phone}</div>
-                  ) : null}
+                  <Field name="phone" placeholder="Phone*" className={styles.form_input} />
+                  {errors.phone && touched.phone ? <p>{errors.phone}</p> : null}
                 </div>
 
-                <button type="submit" className="form_btn">
+                <Button disabled={!dirty} className={styles.form_btn}>
                   Send
-                </button>
+                </Button>
               </Form>
             )}
           </Formik>

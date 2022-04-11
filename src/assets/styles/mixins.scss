@@ -1,0 +1,23 @@
+@mixin m-tablet {
+    @media (max-width: 1210px) {
+        @content;
+    }
+}
+
+@mixin l-tablet {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin d-tablet {
+    @media (max-width: 1310px) {
+        @content;
+    }
+}
+
+@mixin x-tablet {
+    @media (max-width: 1050px) {
+        @content;
+    }
+}

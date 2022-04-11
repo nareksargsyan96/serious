@@ -1,0 +1,90 @@
+@import "../../assets/styles/mixins.scss";
+
+.contact_us {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.contact_map {
+  margin-top: 5%;
+  width: 34%;
+  margin-right: 4%;
+}
+.contact_form {
+  margin-top: 4%;
+  width: 38%;
+}
+.contact_title {
+  color: #0fb7c0;
+  font-weight: 900;
+  font-size: 56px;
+}
+.contact_info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 40px;
+}
+.contact_item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact_form div span {
+  display: flex;
+  align-items: center;
+}
+form {
+  margin-top: 5%;
+}
+.form_input {
+  color: #bfbfbf;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #bfbfbf;
+  background-color: black;
+  margin-top: 10px;
+  height: 40px;
+}
+.form_input:focus {
+  border: none;
+  outline: none;
+  background-color: black;
+  border-bottom: 1px solid #0fb7c0;
+}
+.form_input:hover {
+  border: none;
+  outline: none;
+  background-color: none;
+  border-bottom: 1px solid #0fb7c0;
+}
+.form_input::placeholder {
+  color: #bfbfbf;
+  padding-left: 12px;
+}
+.form_btn {
+  margin-top: 22px;
+  width: 100px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #bfbfbf;
+  color: #bfbfbf;
+  width: 41%;
+}
+
+
+@include l-tablet {
+     .contact_us {
+       flex-direction: column;
+       align-items: center;
+     }
+
+     .contact_info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+}

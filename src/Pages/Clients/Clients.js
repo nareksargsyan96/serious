@@ -1,9 +1,10 @@
-import React from "react";
-import Slide from "react-reveal/Slide";
-import { ReactComponent as JavaScript } from "../../Img/Technologies/javascript.svg";
-import { ClientItem } from "./component/ClientItem";
+import React from 'react';
+import Slide from 'react-reveal/Slide';
 
-import "./Clients.css";
+import { ReactComponent as JavaScript } from '../../assets/images/Technologies/javascript.svg';
+import { ClientItem } from './component/ClientItem';
+
+import './Clients.css';
 
 export const Clients = () => {
   return (

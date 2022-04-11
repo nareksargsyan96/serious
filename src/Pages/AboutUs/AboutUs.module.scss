@@ -1,0 +1,25 @@
+.main_content {
+    margin-top: 7%;
+    width: 65%;
+    margin-left: calc(var(--left) + 29px);
+}
+
+.info_text {
+    width: 85%;
+}
+
+.header {
+    font-weight: 900;
+    font-size: calc(var(--large) + 50px);
+    color: #0fb7c0;
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.info_text {
+    color: white;
+    font-weight: 400;
+    font-size: calc(var(--textSize) + 7px);
+    line-height: 130%;
+    margin-top: 18px;
+}

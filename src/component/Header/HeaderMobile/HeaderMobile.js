@@ -1,11 +1,12 @@
-import React from "react";
-import { Sidebar } from "../../Sidebar/Sidebar";
-import { Drawer } from "@mui/material";
-import { NavLink, useLocation } from "react-router-dom";
-import { useActiveLink } from "../../../hooks/useActiveLink";
-import Fade from "react-reveal/Fade";
+import React from 'react';
+import clsx from 'clsx';
+import Fade from 'react-reveal/Fade';
+import { Drawer } from '@mui/material';
+import { NavLink, useLocation } from 'react-router-dom';
+import { Sidebar } from '../../Sidebar/Sidebar';
+import { useActiveLink } from '../../../hooks/useActiveLink';
 
-import "./HeaderMobile.css";
+import styles from './HeaderMobile.module.scss';
 
 export const HeaderMobile = ({ showRightBar, toggleShowRightBar }) => {
   const { pathname } = useLocation();
@@ -18,46 +19,44 @@ export const HeaderMobile = ({ showRightBar, toggleShowRightBar }) => {
       open={showRightBar}
       onClose={() => toggleShowRightBar(false)}
       classes={{
-        paper: "drawer__paper",
+        paper: styles.drawer__paper,
       }}
     >
       <Fade bottom>
-        <div className="drawer__navigation">
-          <ul className="drawer__list">
-            {newMainRoutes.map((item, index) => {
+        <div className={styles.drawer__navigation}>
+          <ul className={styles.drawer__list}>
+            {newMainRoutes.map((item) => {
               return (
-                <li className="drawer__menu_name" key={index}>
+                <li className={styles.drawer__menu_name} key={item.path}>
                   <NavLink
                     to={item.path}
-                    className={`menu_link ${item.isActive && "active"}`}
+                    className={clsx(styles.menu_link, item.isActive && styles.active)}
                     style={
-                      item.children && pathname.includes(item.path)
-                        ? { color: "#0fb7c0" }
-                        : null
+                      item.children && pathname.includes(item.path) ? { color: '#0fb7c0' } : null
                     }
                     exact={item.exact}
                   >
                     {item.text}
                   </NavLink>
                   {item?.children && (
-                    <div className="drawer__children header_child">
+                    <div className={clsx(styles.drawer__children, styles.header_child)}>
                       <NavLink
                         to={item.path}
                         className={
-                          item.isActive
-                            ? "header_child_line_active"
-                            : "header_child_line"
+                          item.isActive ? styles.header_child_line_active : styles.header_child_line
                         }
-                      ></NavLink>
+                      />
                       {item.children?.map((item) => (
                         <NavLink
                           to={item.path}
                           key={item.path}
-                          className={`drawer__line_children header_child_line ${
-                            item.isActive ? "isActive" : "hide_isActive"
-                          }`}
+                          className={clsx(
+                            styles.drawer__line_children,
+                            styles.header_child_line,
+                            item.isActive ? styles.isActive : styles.hide_isActive,
+                          )}
                         >
-                          <span></span>
+                          <span />
                         </NavLink>
                       ))}
                     </div>
@@ -67,7 +66,7 @@ export const HeaderMobile = ({ showRightBar, toggleShowRightBar }) => {
             })}
           </ul>
         </div>
-        <div className="drawer__sidebar">
+        <div className={styles.drawer__sidebar}>
           <Sidebar />
         </div>
       </Fade>

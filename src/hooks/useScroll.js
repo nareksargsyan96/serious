@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import { history } from "./history";
-import { useLocation } from "react-router-dom";
-import mainRoutes from "../Routes/mainRoutes";
+import { useEffect, useState } from 'react';
+import { history } from './history';
+import { useLocation } from 'react-router-dom';
+import mainRoutes from '../Routes/mainRoutes';
 
-export const useScroll = (ref) => {
+export const useScroll = () => {
   const [down, setDown] = useState(0);
   const [scrollTop, setScrollTop] = useState(0);
-  let { pathname } = useLocation();
+  const { pathname } = useLocation();
 
-  let newMainRoutest = [];
+  const newMainRoutest = [];
   mainRoutes.map((item) => {
     if (item.children) {
       newMainRoutest.push(item);
@@ -35,6 +35,7 @@ export const useScroll = (ref) => {
               }
             });
 
+            // eslint-disable-next-line no-unreachable-loop
             while (nextPath < newMainRoutest.length - 1) {
               history.push(newMainRoutest[nextPath + 1].path);
               return 0;
@@ -42,9 +43,8 @@ export const useScroll = (ref) => {
 
             history.push(newMainRoutest[newMainRoutest.length - 1].path);
             return 0;
-          } else {
-            return prev + down;
           }
+          return prev + down;
         });
       } else {
         setScrollTop((prev) => {
@@ -57,6 +57,7 @@ export const useScroll = (ref) => {
               }
             });
 
+            // eslint-disable-next-line no-unreachable-loop
             while (previousPath < newMainRoutest.length - 1) {
               history.push(newMainRoutest[previousPath - 1]?.path);
               return 0;
@@ -64,16 +65,15 @@ export const useScroll = (ref) => {
             history.push(`${newMainRoutest[previousPath - 1].path}`);
 
             return 0;
-          } else {
-            return prev + down;
           }
+          return prev + down;
         });
       }
     };
-    window.addEventListener("wheel", scrollListener);
+    window.addEventListener('wheel', scrollListener);
 
     return () => {
-      window.removeEventListener("wheel", scrollListener);
+      window.removeEventListener('wheel', scrollListener);
     };
   }, [down, scrollTop, pathname]);
 };

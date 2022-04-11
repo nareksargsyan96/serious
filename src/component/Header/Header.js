@@ -1,12 +1,13 @@
-import React from "react";
-import { ReactComponent as Logo } from "../../Img/SeriousLogo.svg";
-import { ReactComponent as BurgerImages } from "../../Img/menu.svg";
-import { NavLink, useLocation } from "react-router-dom";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { useActiveLink } from "../../hooks/useActiveLink";
-import { useTranslation } from "react-i18next";
+import { ReactComponent as Logo } from '../../assets/images/SeriousLogo.svg';
+import { ReactComponent as BurgerImages } from '../../assets/images/menu.svg';
+import { NavLink, useLocation } from 'react-router-dom';
+import { useActiveLink } from '../../hooks/useActiveLink';
 
-import "./Header.css";
+import styles from './Header.module.scss';
+import clsx from 'clsx';
 
 export const Header = ({ showItems, toggleShowRightBar }) => {
   const { t } = useTranslation();
@@ -20,63 +21,68 @@ export const Header = ({ showItems, toggleShowRightBar }) => {
   };
 
   return (
-    <div className="header_line">
-      <div className="header_logo">
-        <Logo />
-      </div>
-      <div className="header__navigation_burger">
-        <div className="navigation">
-          {showItems && (
-            <ul className="header_links">
-              {newMainRoutes
-                .map((el) => ({ ...el, text: t(el.name) }))
-                .map((item, index) => {
-                  return (
-                    <li className="menu_name" key={index}>
-                      <NavLink
-                        to={item.path}
-                        className={`menu_link ${item.isActive && "active"}`}
-                        style={
-                          item.children && pathname.includes(item.path)
-                            ? { color: "#0fb7c0" }
-                            : null
-                        }
-                        exact={item.exact}
-                      >
-                        {item.text}
-                      </NavLink>
-                      {item?.children && (
-                        <div className="header_child">
-                          <NavLink
-                            to={item.path}
-                            className={
-                              item.isActive
-                                ? "header_child_line_active"
-                                : "header_child_line"
-                            }
-                          ></NavLink>
-                          {item.children?.map((item) => (
+    <div className={styles.header_line}>
+      <div className={styles.header_wrapper}>
+        <div className={styles.header_logo}>
+          <Logo className={styles.logo} />
+        </div>
+        <div className={styles.header__navigation_burger}>
+          <div className={styles.navigation}>
+            {showItems && (
+              <ul className={styles.header_links}>
+                {newMainRoutes
+                  .map((el) => ({ ...el, text: t(el.name) }))
+                  .map((item) => {
+                    return (
+                      <li className={styles.menu_name} key={item.path}>
+                        <NavLink
+                          to={item.path}
+                          className={clsx(styles.menu_link, item.isActive && styles.active)}
+                          style={
+                            item.children && pathname.includes(item.path)
+                              ? { color: '#0fb7c0' }
+                              : null
+                          }
+                          exact={item.exact}
+                        >
+                          {item.text}
+                        </NavLink>
+                        {item?.children && (
+                          <div className={styles.header_child}>
                             <NavLink
                               to={item.path}
-                              key={item.path}
-                              className={`header_child_line ${
-                                item.isActive ? "isActive" : "hide_isActive"
-                              }`}
-                            >
-                              <span></span>
-                            </NavLink>
-                          ))}
-                        </div>
-                      )}
-                    </li>
-                  );
-                })}
-            </ul>
-          )}
+                              className={
+                                item.isActive
+                                  ? styles.header_child_line_active
+                                  : styles.header_child_line
+                              }
+                            />
+                            {item.children?.map((item) => (
+                              <NavLink
+                                to={item.path}
+                                key={item.path}
+                                className={clsx(
+                                  styles.header_child_line,
+                                  item.isActive ? styles.isActive : styles.hide_isActive,
+                                )}
+                              >
+                                <span />
+                              </NavLink>
+                            ))}
+                          </div>
+                        )}
+                      </li>
+                    );
+                  })}
+              </ul>
+            )}
+          </div>
         </div>
-        <div className="burger_images">
+      </div>
+      <div className={styles.burger_images}>
+        <span>
           <BurgerImages onClick={showRightMenu} />
-        </div>
+        </span>
       </div>
     </div>
   );

@@ -1,27 +1,40 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import clsx from 'clsx';
+import React from 'react';
+import { useTranslation } from 'react-i18next';
 
-import "./Sidebar.css";
+import styles from './Sidebar.module.scss';
 
 export const Sidebar = () => {
   const { i18n } = useTranslation();
+  const currentLang = i18n.language;
+
   const changeLang = (lang) => {
     i18n.changeLanguage(lang);
   };
 
   return (
-    <div className="sidebar">
-      <ul className="traslate">
-        <li className="traslate_link" onClick={() => changeLang("en")}>
+    <div className={styles.sidebar}>
+      <div className={styles.translate}>
+        <button
+          className={clsx(styles.btn, currentLang === 'en' && styles.btnActive)}
+          onClick={() => changeLang('en')}
+        >
           ENG
-        </li>
-        <li className="traslate_link" onClick={() => changeLang("rus")}>
+        </button>
+        <button
+          className={clsx(styles.btn, currentLang === 'rus' && styles.btnActive)}
+          onClick={() => changeLang('rus')}
+        >
           RUS
-        </li>
-        <li className="traslate_link" onClick={() => changeLang("hy")}>
+        </button>
+        <button
+          className={clsx(styles.btn, currentLang === 'hy' && styles.btnActive)}
+          onClick={() => changeLang('hy')}
+        >
           ARM
-        </li>
-      </ul>
+        </button>
+      </div>
     </div>
   );
 };

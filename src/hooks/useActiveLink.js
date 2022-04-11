@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import mainRoutes from "../Routes/mainRoutes";
+import { useState, useEffect } from 'react';
+import mainRoutes from '../Routes/mainRoutes';
 
 export const useActiveLink = (path) => {
   const [newMainRoutes, setNewMainRoutes] = useState([]);
@@ -7,7 +7,7 @@ export const useActiveLink = (path) => {
   useEffect(() => {
     const updatedRoutes = mainRoutes.map((el) => {
       if (el.path === path) {
-        if (el.hasOwnProperty("children")) {
+        if (el.hasOwnProperty('children')) {
           el.children.forEach((item) => {
             item.isActive = false;
           });
@@ -17,7 +17,7 @@ export const useActiveLink = (path) => {
           isActive: true,
         };
       }
-      if (el.hasOwnProperty("children")) {
+      if (el.hasOwnProperty('children')) {
         el.children.forEach((item) => {
           if (item.path === path) {
             item.isActive = true;

@@ -1,16 +1,16 @@
-import React from "react";
-import "./ServicesComponentRow.css";
+import React from 'react';
+import './ServicesComponentRow.css';
 
-export const ServicesComponentRow = (props) => {
+export const ServicesComponentRow = ({ class_name, img, mainTitle, mainTitle2, text }) => {
   return (
     <div className="main_servis">
-      <div className={props.class_name}>
-        <div className="servis-img">{props.img}</div>
+      <div className={class_name}>
+        <div className="servis-img">{img}</div>
 
         <div className="servis-text">
-          <span className="mainTitle">{props.mainTitle}</span>
-          <span className="subtitle">{props.mainTitle2}</span>
-          <span className="secondText">{props.text}</span>
+          <span className="mainTitle">{mainTitle}</span>
+          <span className="subtitle">{mainTitle2}</span>
+          <span className="secondText">{text}</span>
         </div>
       </div>
     </div>

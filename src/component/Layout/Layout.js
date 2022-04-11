@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Header } from "./../Header/Header";
-import { Sidebar } from "./../Sidebar/Sidebar";
-import { Footer } from "../Footer/Footer";
-import { useScroll } from "./../../hooks/useScroll";
-import { HeaderMobile } from "../Header/HeaderMobile/HeaderMobile";
-import { useWindowSIze } from "../../hooks/useWindowSIze";
+import React, { useEffect, useState } from 'react';
+import { Header } from '../Header/Header';
+import { Sidebar } from '../Sidebar/Sidebar';
+import { Footer } from '../Footer/Footer';
+import { useScroll } from '../../hooks/useScroll';
+import { HeaderMobile } from '../Header/HeaderMobile/HeaderMobile';
+import { useWindowSIze } from '../../hooks/useWindowSIze';
 
-import "./Layout.css";
+import styles from './Layout.module.scss';
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
   const size = useWindowSIze();
   useScroll();
   const [showFooter, setShowFooter] = useState(false);
@@ -21,22 +21,17 @@ const Layout = ({ children }) => {
   }, [size]);
 
   return (
-    <div className="layout">
+    <div className={styles.layout}>
       {size && <Sidebar />}
       <Header showItems={size} toggleShowRightBar={setShowRightBar} />
 
-      <HeaderMobile
-        showRightBar={showRightBar}
-        toggleShowRightBar={setShowRightBar}
-      />
+      <HeaderMobile showRightBar={showRightBar} toggleShowRightBar={setShowRightBar} />
 
-      <div className="content">
-        <div className="content_children">{children}</div>
+      <div className={styles.content}>
+        <div className={styles.content_children}>{children}</div>
       </div>
 
       <Footer showFooter={showFooter} toggleShow={setShowFooter} />
     </div>
   );
 };
-
-export default Layout;
