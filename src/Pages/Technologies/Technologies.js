@@ -19,6 +19,7 @@ import { ReactComponent as PhpLogo } from "../../Img/Technologies/icons8-php-log
 import { ReactComponent as Postgresql } from "../../Img/Technologies/icons8-postgresql.svg";
 import { ReactComponent as Python } from "../../Img/Technologies/icons8-python.svg";
 import { ReactComponent as Vue } from "../../Img/Technologies/icons8-vue-js.svg";
+import { ReactComponent as Laravel } from "../../Img/Technologies/laravel1.svg";
 
 import "./Technologies.css";
 
@@ -43,6 +44,7 @@ export const Technologies = () => {
     { name: "Python", img: <Python /> },
     { name: "Vue", img: <Vue /> },
     { name: "Postgresql", img: <Postgresql /> },
+    { name: "Laravel", img: <Laravel /> },
   ]);
   return (
     <Slide left>

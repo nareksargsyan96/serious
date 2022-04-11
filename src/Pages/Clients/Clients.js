@@ -1,6 +1,7 @@
 import React from "react";
-import { ClientItem } from "./component/ClientItem";
 import Slide from "react-reveal/Slide";
+import { ReactComponent as JavaScript } from "../../Img/Technologies/javascript.svg";
+import { ClientItem } from "./component/ClientItem";
 
 import "./Clients.css";
 
@@ -9,13 +10,13 @@ export const Clients = () => {
     <Slide left>
       <div className="clients_main">
         <div className="container_left">
-          <ClientItem />
+          <ClientItem clintsvg={<JavaScript />} />
         </div>
         <div className="container_between">
           <div className="container_between_up">
-            <ClientItem />
-            <ClientItem />
-            <ClientItem />
+            <ClientItem clintsvg={<JavaScript />} />
+            <ClientItem clintsvg={<JavaScript />} />
+            <ClientItem clintsvg={<JavaScript />} />
           </div>
           <div className="container_text">
             <div className="container_title">
@@ -24,13 +25,13 @@ export const Clients = () => {
             </div>
           </div>
           <div className="container_between_down">
-            <ClientItem />
-            <ClientItem />
-            <ClientItem />
+            <ClientItem clintsvg={<JavaScript />} />
+            <ClientItem clintsvg={<JavaScript />} />
+            <ClientItem clintsvg={<JavaScript />} />
           </div>
         </div>
         <div className="container_right">
-          <ClientItem />
+          <ClientItem clintsvg={<JavaScript />} />
         </div>
       </div>
     </Slide>

@@ -2,6 +2,7 @@
   font-size: calc(var(--large) + 15px);
 }
 .process_info {
+  width: 65%;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -16,4 +17,16 @@
 }
 .process_icons {
   font-size: calc(var(--processTitle) + 5px);
+}
+.main_process {
+  margin-top: 7%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.process__item_icon {
+  display: contents;
 }
