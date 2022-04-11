@@ -1,22 +1,22 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Heading } from "../../component/Heading/Heading";
-import './Home.css';
+import Slide from "react-reveal/Slide";
+
+import "./Home.css";
 export const Home = () => {
-    return(
+  const { t } = useTranslation();
+  return (
+    <Slide left>
       <div className="main_content">
-          <Heading variant ="h1" className='header'>
-              YOUR BUSINESS NEEDS OUR SOLUTIONS
-          </Heading>
+        <Heading variant="h1" className="header">
+          {t("home_header")}
+        </Heading>
 
-          <Heading variant ="span" className='subtitle'>
-            Have an idea? Serious is the best solution
-          </Heading>
-
-          <Heading variant ="p" className='info_text' >
-            We deliver web and mobile app development services to global businesses since 2017, 
-            We deliver globally, providing result-driven project management and seamless communication. 
-            Our design-focused approach and project execution processes help you to deliver the right solutions.
-          </Heading>
+        <Heading variant="p" className="info_text">
+          {t("home_text")}
+        </Heading>
       </div>
-    )
-}
+    </Slide>
+  );
+};

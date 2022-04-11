@@ -1,0 +1,18 @@
+.clientItem {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  background-color: #6767fc;
+  border: 2px solid #0fb7c0;
+  border-radius: 50%;
+  justify-content: center;
+}
+.clientItem:hover {
+  background: white;
+}
+.clientItem__img {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}

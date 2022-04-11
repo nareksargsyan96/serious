@@ -6,16 +6,16 @@
   color: white;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  justify-content: center;
 }
 .contact_map {
   margin-top: 5%;
-  width: 40%;
+  width: 34%;
   margin-right: 4%;
 }
 .contact_form {
   margin-top: 4%;
-  width: 48%;
+  width: 38%;
 }
 .contact_title {
   font-family: "Mont";
@@ -31,30 +31,29 @@
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  width: 82%;
+  width: 64%;
   justify-content: space-between;
 }
 .contact_phone {
   display: flex;
   align-items: center;
-  margin-right: 4%;
+  gap: 16px;
 }
 .contact_email {
   display: flex;
+  gap: 16px;
 }
+
 .contact_form div span {
   display: flex;
   align-items: center;
-}
-span {
-  margin-left: 5px;
 }
 form {
   margin-top: 5%;
 }
 .form_input {
   color: #bfbfbf;
-  width: 82%;
+  width: 100%;
   border: none;
   border-bottom: 1px solid #bfbfbf;
   background-color: black;

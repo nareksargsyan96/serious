@@ -1,47 +1,63 @@
 import React from "react";
 import { Heading } from "./../../../component/Heading/Heading";
-import { FaCode } from "react-icons/fa";
+import { ReactComponent as Discover } from "../../../Img/about/homeDiscover.svg";
+
+import { ReactComponent as Build } from "../../../Img/about/homeBuild.svg";
+import { ReactComponent as Design } from "../../../Img/about/homeDesign.svg";
+import { ReactComponent as Deliver } from "../../../Img/about/homeDeliver.svg";
+
+import Slide from "react-reveal/Slide";
+
 import "./Process.css";
 
 export const Process = () => {
   const process = [
     {
+      svg: <Discover />,
       title: "Discover",
-      text: "We shape brands through exploration, applying in-depth research to challenge assumptions at every turn.",
+      text: "Exploration is how we shape brands, and we use in-depth research to challenge assumptions at every stage.",
     },
     {
+      svg: <Design />,
       title: "Design",
-      text: "Our design approach is to simplify. We embrace the joy in creating something unique that is easy for end users.",
+      text: "Our design philosophy is to keep things simple. We like the satisfaction of developing something unique that is simple for end consumers.",
     },
     {
+      svg: <Build />,
       title: "Build",
-      text: "Using modern technologies, we build with efficiency and skill, creating flexible and scalable business-driven solutions.",
+      text: "We create with efficiency and skill, providing adaptable and scalable business-driven solutions, using modern technologies.",
     },
     {
+      svg: <Deliver />,
       title: "Deliver",
-      text: "We take an iterative approach to both our work and our practice, always looking for ways to improve what we do.",
+      text: "We approach both our work and our practice in an iterative manner, continuously searching for ways to better what we do.",
     },
   ];
   return (
-    <div className="main_content">
-      <Heading variant="h1" className="header process">
-        We Simplify Software Development Process
-      </Heading>
-      <div>
-        <ul className="process_info">
-          {process.map((item) => {
-            return (
-              <li>
-                <div>
-                  <FaCode />
-                  <h1 className={"title"}>{item.title}</h1>
+    <Slide left>
+      <div className="main_process">
+        <div>
+          <Heading variant="h1" className="header process">
+            We Simplify Software Development Process
+          </Heading>
+        </div>
+
+        <div className="process__item_icon">
+          <div className="process_info">
+            {process.map((item) => {
+              return (
+                <div className="">
+                  <div className="process_icons">
+                    <div>{item.svg}</div>
+                    <h1 className={"title"}>{item.title}</h1>
+                  </div>
+                  <div>{item.text}</div>
                 </div>
-                <div>{item.text}</div>
-              </li>
-            );
-          })}
-        </ul>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </div>
+    </Slide>
   );
 };

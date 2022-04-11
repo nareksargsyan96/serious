@@ -5,6 +5,7 @@ import {
   Marker,
 } from "react-google-maps";
 import { compose, withProps } from "recompose";
+
 import "./GoogleMapComponent.css";
 
 export const GoogleMapComponent = compose(

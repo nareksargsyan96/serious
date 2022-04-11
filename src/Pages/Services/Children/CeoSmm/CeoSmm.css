@@ -1,12 +1,8 @@
-@import url("http://fonts.cdnfonts.com/css/mont");
-
 .ceo_smm .subtitle {
   display: none;
 }
 
 .ceo_smm .secondText {
-  font-family: "Mont";
-  font-style: normal;
   font-weight: 400;
-  font-size: 21px;
+  font-size: calc(var(--textSize) + 7px);
 }

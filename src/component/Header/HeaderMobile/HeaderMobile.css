@@ -1,0 +1,29 @@
+.drawer__paper {
+  font-size: var(--medium);
+  opacity: 1 !important;
+  width: 250px;
+  background-color: #303030 !important;
+  border-left: 1px solid rgba(242, 242, 242, 0.5);
+}
+.drawer__menu_name {
+  list-style-type: none;
+}
+.drawer__list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 2;
+  align-items: center;
+  justify-content: center;
+}
+.drawer__children {
+  width: 100%;
+  margin-bottom: 2%;
+}
+.drawer__sidebar {
+  display: flex;
+  justify-content: center;
+}
+.drawer__sidebar .sidebar {
+  border-left: none;
+}

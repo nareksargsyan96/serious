@@ -1,7 +1,7 @@
 .main_content {
   margin-top: 7%;
   width: 65%;
-  margin-left: 12%;
+  margin-left: calc(var(--left) + 29px);
 }
 .info_text {
   width: 85%;

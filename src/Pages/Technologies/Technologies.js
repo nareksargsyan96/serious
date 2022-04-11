@@ -1,4 +1,7 @@
 import React, { useMemo } from "react";
+import { useTranslation } from "react-i18next";
+import Slide from "react-reveal/Slide";
+
 import { Heading } from "../../component/Heading/Heading";
 
 import { ReactComponent as JavaScript } from "../../Img/Technologies/javascript.svg";
@@ -16,11 +19,13 @@ import { ReactComponent as PhpLogo } from "../../Img/Technologies/icons8-php-log
 import { ReactComponent as Postgresql } from "../../Img/Technologies/icons8-postgresql.svg";
 import { ReactComponent as Python } from "../../Img/Technologies/icons8-python.svg";
 import { ReactComponent as Vue } from "../../Img/Technologies/icons8-vue-js.svg";
+import { ReactComponent as Laravel } from "../../Img/Technologies/laravel1.svg";
 
 import "./Technologies.css";
 
-
 export const Technologies = () => {
+  const { t } = useTranslation();
+
   const technologiesOne = useMemo(() => [
     { name: "JavaScript", img: <JavaScript /> },
     { name: "React", img: <ReactTech /> },
@@ -39,34 +44,29 @@ export const Technologies = () => {
     { name: "Python", img: <Python /> },
     { name: "Vue", img: <Vue /> },
     { name: "Postgresql", img: <Postgresql /> },
+    { name: "Laravel", img: <Laravel /> },
   ]);
   return (
-    <div className="tex_Info">
-      <Heading variant="h1" className="header technologies_header">
-        Technologies
-      </Heading>
-      <div className="technologies">
-        <ul className="technologies_Info">
-          {technologiesOne.map((item, index) => {
-            return (
-              <li key={index}>
-                <div> {item.img} </div>
-                <div> {item.name} </div>
-              </li>
-            );
-          })}
-        </ul>
-        <ul className="technologiesTwo_Info">
-          {technologiesTwo.map((item, index) => {
-            return (
-              <li key={index}>
-                <div> {item.img} </div>
-                <div> {item.name} </div>
-              </li>
-            );
-          })}
-        </ul>
+    <Slide left>
+      <div className="technologies_wrapper">
+        <div>
+          <Heading variant="h1" className="header technologies_header">
+            {t("technologies")}
+          </Heading>
+        </div>
+        <div className="technologies">
+          <div className="technologies_items">
+            <div className="technologies_Info">
+              {[...technologiesOne, ...technologiesTwo].map((item, index) => (
+                <div key={index}>
+                  <div> {item.img} </div>
+                  <div> {item.name} </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </Slide>
   );
 };
