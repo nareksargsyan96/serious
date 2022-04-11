@@ -102,14 +102,7 @@ export const Contact = () => {
                     <div>{errors.phone}</div>
                   ) : null}
                 </div>
-                {/* <CustomInput
-                type="number"
-                title="Phone"
-                placeholder="Phone"
-                name="phone"
-                errors={errors}
-                touched={touched}
-              /> */}
+
                 <button type="submit" className="form_btn">
                   Send
                 </button>

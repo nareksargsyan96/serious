@@ -1,5 +1,5 @@
-import { FastField } from "formik";
 import React from "react";
+import { FastField } from "formik";
 
 export const CustomInput = ({ title, name, type, errors, touched }) => {
   console.log("errors", errors);

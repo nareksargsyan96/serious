@@ -33,20 +33,11 @@
   flex-direction: row;
   justify-content: space-evenly;
 }
-/* .clients_text {
-  font-size: 18%;
-  background: -webkit-linear-gradient(#6767fc, #0fb7c0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
-/* color: linear-gradient(90deg, #6767fc, #0fb7c0); */
-/* }
-*/
 .container_title {
   font-size: 3rem;
   background: -webkit-linear-gradient(#3a326d, #0fb7c0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* color: linear-gradient(90deg, #6767fc, #0fb7c0); */
 }
 .container_text {
   text-align: center;

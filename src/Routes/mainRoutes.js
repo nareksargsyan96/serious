@@ -9,7 +9,7 @@ import { Automation } from "./../Pages/Services/Children/Automation/Automation";
 import { CeoSmm } from "./../Pages/Services/Children/CeoSmm/CeoSmm";
 import { Contact } from "../Pages/Contact/Contact";
 import { Clients } from "../Pages/Clients/Clients";
-// import { Courses } from "../Pages/Courses/Courses";
+
 
 const mainRoutes = [
   {

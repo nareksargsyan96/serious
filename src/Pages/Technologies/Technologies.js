@@ -1,7 +1,8 @@
 import React, { useMemo } from "react";
-import { Heading } from "../../component/Heading/Heading";
 import { useTranslation } from "react-i18next";
 import Slide from "react-reveal/Slide";
+
+import { Heading } from "../../component/Heading/Heading";
 
 import { ReactComponent as JavaScript } from "../../Img/Technologies/javascript.svg";
 import { ReactComponent as ReactTech } from "../../Img/Technologies/react.svg";
@@ -18,6 +19,7 @@ import { ReactComponent as PhpLogo } from "../../Img/Technologies/icons8-php-log
 import { ReactComponent as Postgresql } from "../../Img/Technologies/icons8-postgresql.svg";
 import { ReactComponent as Python } from "../../Img/Technologies/icons8-python.svg";
 import { ReactComponent as Vue } from "../../Img/Technologies/icons8-vue-js.svg";
+
 import "./Technologies.css";
 
 export const Technologies = () => {

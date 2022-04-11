@@ -3,7 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import mainRoutes from "./mainRoutes";
 
 const PageRoutes = ({}) => {
-  //token
   let newMainRoutest = [];
   mainRoutes.map((item) => {
     if (item.children) {
@@ -28,9 +27,6 @@ const PageRoutes = ({}) => {
             component={item.component}
           />
         ))}
-        {/* <Route exact path="/" component={Home} />
-        <Route exact path="/About_us" component={AboutUs} /> */}
-        {/* <Route path="/*" render={() =>{return <Redirect to="/404/"/>}}/> */}
       </Switch>
     </Fragment>
   );

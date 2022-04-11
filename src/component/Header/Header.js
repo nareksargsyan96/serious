@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as Logo } from "../../Img/SeriousLogo.svg";
 import { ReactComponent as BurgerImages } from "../../Img/menu.svg";
 import { NavLink, useLocation } from "react-router-dom";
-// import { mainRoutes } from "./../../Routes/mainRoutes";
+
 import { useActiveLink } from "../../hooks/useActiveLink";
 import { useTranslation } from "react-i18next";
 

@@ -4,9 +4,9 @@ import { Sidebar } from "./../Sidebar/Sidebar";
 import { Footer } from "../Footer/Footer";
 import { useScroll } from "./../../hooks/useScroll";
 import { HeaderMobile } from "../Header/HeaderMobile/HeaderMobile";
+import { useWindowSIze } from "../../hooks/useWindowSIze";
 
 import "./Layout.css";
-import { useWindowSIze } from "../../hooks/useWindowSIze";
 
 const Layout = ({ children }) => {
   const size = useWindowSIze();
