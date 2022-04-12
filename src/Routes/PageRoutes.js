@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import { Route, Switch } from "react-router-dom";
-import mainRoutes from "./mainRoutes";
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+import mainRoutes from './mainRoutes';
 
-const PageRoutes = ({}) => {
-  let newMainRoutest = [];
+const PageRoutes = () => {
+  const newMainRoutest = [];
   mainRoutes.map((item) => {
     if (item.children) {
       newMainRoutest.push(item);
@@ -17,18 +17,11 @@ const PageRoutes = ({}) => {
   });
 
   return (
-    <Fragment>
-      <Switch>
-        {newMainRoutest.map((item) => (
-          <Route
-            key={item.name}
-            exact={item.exact}
-            path={item.path}
-            component={item.component}
-          />
-        ))}
-      </Switch>
-    </Fragment>
+    <Switch>
+      {newMainRoutest.map((item) => (
+        <Route key={item.name} exact={item.exact} path={item.path} component={item.component} />
+      ))}
+    </Switch>
   );
 };
 

@@ -11,13 +11,13 @@ export const Clients = () => {
     <Slide left>
       <div className="clients_main">
         <div className="container_left">
-          <ClientItem clintsvg={<JavaScript />} />
+          <ClientItem clientsvg={<JavaScript />} />
         </div>
         <div className="container_between">
           <div className="container_between_up">
-            <ClientItem clintsvg={<JavaScript />} />
-            <ClientItem clintsvg={<JavaScript />} />
-            <ClientItem clintsvg={<JavaScript />} />
+            <ClientItem clientsvg={<JavaScript />} />
+            <ClientItem clientsvg={<JavaScript />} />
+            <ClientItem clientsvg={<JavaScript />} />
           </div>
           <div className="container_text">
             <div className="container_title">
@@ -26,13 +26,13 @@ export const Clients = () => {
             </div>
           </div>
           <div className="container_between_down">
-            <ClientItem clintsvg={<JavaScript />} />
-            <ClientItem clintsvg={<JavaScript />} />
-            <ClientItem clintsvg={<JavaScript />} />
+            <ClientItem clientsvg={<JavaScript />} />
+            <ClientItem clientsvg={<JavaScript />} />
+            <ClientItem clientsvg={<JavaScript />} />
           </div>
         </div>
         <div className="container_right">
-          <ClientItem clintsvg={<JavaScript />} />
+          <ClientItem clientsvg={<JavaScript />} />
         </div>
       </div>
     </Slide>

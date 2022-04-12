@@ -1,17 +1,17 @@
 import React from 'react';
-import './ServicesComponentRow.css';
+import clsx from 'clsx';
 
-export const ServicesComponentRow = ({ class_name, img, mainTitle, mainTitle2, text }) => {
+import styles from './ServicesComponentRow.module.scss';
+
+export const ServicesComponentRow = ({ img, mainTitle, mainTitle2, text, rtl = false }) => {
   return (
-    <div className="main_servis">
-      <div className={class_name}>
-        <div className="servis-img">{img}</div>
+    <div className={clsx(styles.main_service, rtl && styles.rtl)}>
+      <div className={styles.service_img}>{img}</div>
 
-        <div className="servis-text">
-          <span className="mainTitle">{mainTitle}</span>
-          <span className="subtitle">{mainTitle2}</span>
-          <span className="secondText">{text}</span>
-        </div>
+      <div className={styles.service_text}>
+        <span className={styles.mainTitle}>{mainTitle}</span>
+        <span className={styles.subtitle}>{mainTitle2}</span>
+        <span className={styles.secondText}>{text}</span>
       </div>
     </div>
   );

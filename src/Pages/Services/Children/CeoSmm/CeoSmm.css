@@ -1,8 +1,0 @@
-.ceo_smm .subtitle {
-  display: none;
-}
-
-.ceo_smm .secondText {
-  font-weight: 400;
-  font-size: calc(var(--textSize) + 7px);
-}

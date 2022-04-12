@@ -1,8 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
-import Bounce from 'react-reveal/Bounce';
-
-import { ReactComponent as LineDown } from '../../assets/images/lineDown.svg';
+import { motion } from 'framer-motion';
 import { ReactComponent as LineUp } from '../../assets/images/lineUp.svg';
 import { FOOTER_LINKS } from './constants/constants';
 
@@ -14,28 +12,48 @@ export const Footer = ({ showFooter, toggleShow }) => {
   };
 
   return (
-    <div className={styles.footer}>
-      <div className={styles.footer_Line}>
-        <button className={styles.footer_Line_but} type="button" onClick={handleClick}>
-          <div className={styles.footer__btnIcon}>{showFooter ? <LineDown /> : <LineUp />}</div>
-          <span className={styles.footer__btnName}>FOOTER</span>
-        </button>
+    <motion.div className={styles.footer}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          padding: !showFooter && '20px 0',
+          background: 'none',
+        }}
+      >
+        <motion.button
+          className={styles.footer_Line_but}
+          animate={{ rotate: showFooter ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          type="button"
+          onClick={handleClick}
+        >
+          <LineUp />
+        </motion.button>
       </div>
-      <div className={showFooter ? styles.bounce_footer_modal : styles.bounce_footer_modal_close}>
-        <Bounce bottom opposite={false} collapse when={showFooter}>
-          <div className={styles.footer_modal}>
-            <ul className={styles.footer_social}>
-              {FOOTER_LINKS.map(({ id, link, img, className }) => {
-                return (
+      {showFooter && (
+        <motion.div
+          className={styles.footer}
+          initial={{ translateY: 1000, height: 0 }}
+          animate={{ translateY: 0, height: 'auto' }}
+          exit={{ translateY: 1000, height: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          <div>
+            <div className={styles.footer_modal}>
+              <ul className={styles.footer_social}>
+                {FOOTER_LINKS.map(({ id, link, img, className }) => (
                   <li key={id} className={clsx(styles.social, styles[className])}>
                     <a href={link}>{img}</a>
                   </li>
-                );
-              })}
-            </ul>
+                ))}
+              </ul>
+            </div>
           </div>
-        </Bounce>
-      </div>
-    </div>
+        </motion.div>
+      )}
+    </motion.div>
   );
 };

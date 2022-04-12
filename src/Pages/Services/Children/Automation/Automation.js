@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ServicesComponentRow } from '../../../../component/ServicesComponent/ServicesComponentRow';
 import { ReactComponent as AutomationImg } from '../../../../assets/images/Services/Automation.svg';
 
-import './Automation.css';
+import styles from './Automation.module.scss';
 
 export const Automation = () => {
   const { t } = useTranslation();
@@ -14,9 +14,8 @@ export const Automation = () => {
 
   return (
     <Slide left>
-      <div className="main_services">
+      <div className={styles.main_services}>
         <ServicesComponentRow
-          class_name="flex-row automation"
           img={<AutomationImg />}
           mainTitle={title1}
           mainTitle2={title2}

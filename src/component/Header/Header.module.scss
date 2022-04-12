@@ -24,6 +24,13 @@
   padding-right: 20px;
 }
 
+@include ll-tablet {
+  .header_wrapper{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
@@ -114,6 +121,21 @@
 @include d-tablet {
   .logo{
     width: 200px;
+  }
+}
+
+
+@include ll-tablet {
+  .logo{
+    width: 150px;
+  }
+
+  .burger_images {
+    width: 100px;
+  }
+
+  .header_line {
+    height: 110px;
   }
 }
 

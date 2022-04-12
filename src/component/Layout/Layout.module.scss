@@ -8,7 +8,7 @@
     "content sidebar"
     "footer sidebar";
   grid-template-columns: 1fr 127px;
-  grid-template-rows: 127px 1fr;
+  grid-template-rows: auto 1fr;
   max-height: 100vh;
   min-height: 100vh;
   overflow: hidden;

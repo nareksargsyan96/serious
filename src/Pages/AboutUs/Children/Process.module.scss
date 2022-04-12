@@ -1,0 +1,59 @@
+@import "src/assets/styles/mixins";
+
+.main_process {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.process {
+  font-weight: 900;
+  font-size: 84px;
+  color: #0fb7c0;
+  padding: 15px;
+  text-transform: uppercase;
+}
+
+.process_info {
+  display: grid;
+  grid-auto-flow: column;
+  flex-direction: row;
+
+  gap: 20px;
+  color: #ffffff;
+}
+
+@include m-tablet {
+  .process {
+    font-size: 70px;
+  }
+}
+
+@include l-tablet {
+  .process_info {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+  }
+
+  .process {
+    font-size: 45px;
+    padding: 0;
+  }
+}
+
+.title {
+  color: white;
+  font-size: calc(var(--processTitle) + 5px);
+}
+
+.process_icons {
+  font-size: calc(var(--processTitle) + 5px);
+}
+
+.process__item_icon {
+  display: contents;
+}

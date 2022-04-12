@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import "./ClientItem.css";
+import './ClientItem.css';
 
-export const ClientItem = (props) => {
+export const ClientItem = ({ clientsvg }) => {
   return (
-    <div className="clientItem" >
-      <div className="clientItem__img">{props.clintsvg}</div>
+    <div className="clientItem">
+      <div className="clientItem__img">{clientsvg}</div>
     </div>
   );
 };

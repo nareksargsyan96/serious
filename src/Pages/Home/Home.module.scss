@@ -1,0 +1,36 @@
+@import "../../assets/styles/mixins";
+
+.main_content {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+
+.header {
+  font-weight: 900;
+  font-size: calc(var(--large) + 50px);
+  color: #0fb7c0;
+  padding: 15px;
+}
+
+.info_text {
+  color: white;
+  font-weight: 400;
+  font-size: calc(var(--textSize) + 7px);
+  line-height: 130%;
+  margin-top: 18px;
+  padding: 15px;
+  width: 85%;
+}
+
+@include m-tablet {
+  .header {
+    font-size: 70px;
+  }
+}
+
+@include l-tablet {
+  .header {
+    font-size: 50px;
+  }
+}

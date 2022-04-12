@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import { Header } from '../Header/Header';
 import { Sidebar } from '../Sidebar/Sidebar';
 import { Footer } from '../Footer/Footer';
@@ -31,7 +32,9 @@ export const Layout = ({ children }) => {
         <div className={styles.content_children}>{children}</div>
       </div>
 
-      <Footer showFooter={showFooter} toggleShow={setShowFooter} />
+      <AnimatePresence initial={false}>
+        <Footer showFooter={showFooter} toggleShow={setShowFooter} />
+      </AnimatePresence>
     </div>
   );
 };

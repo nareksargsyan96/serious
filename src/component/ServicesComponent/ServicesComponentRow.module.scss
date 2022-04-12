@@ -1,0 +1,57 @@
+@import "src/assets/styles/mixins";
+
+.main_service {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 7% 0 0 0;
+}
+
+.rtl {
+  flex-direction: row-reverse;
+}
+
+.subtitle {
+  font-size: 84px;
+}
+
+.service_text {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+  color: white;
+}
+
+.mainTitle {
+  font-size: 84px;
+  font-weight: 900;
+  color: white;
+  margin-top: 30px;
+}
+
+
+@include d-tablet {
+  .main_service {
+    gap: 20px;
+  }
+
+  .subtitle {
+    font-size: 50px;
+  }
+
+  .mainTitle {
+    font-size: 50px;
+  }
+}
+
+@include l-tablet {
+  .main_service {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .service_text {
+    width: 90%;
+  }
+}

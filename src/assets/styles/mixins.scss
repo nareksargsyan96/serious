@@ -10,6 +10,12 @@
     }
 }
 
+@mixin ll-tablet {
+    @media (max-width: 420px) {
+        @content;
+    }
+}
+
 @mixin d-tablet {
     @media (max-width: 1310px) {
         @content;

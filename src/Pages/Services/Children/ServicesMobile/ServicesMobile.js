@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ServicesComponentRow } from '../../../../component/ServicesComponent/ServicesComponentRow';
 import { ReactComponent as MobileApp } from '../../../../assets/images/Services/ServicMobile.svg';
 
-import './ServicesMobile.css';
+import styles from './ServicesMobile.module.scss';
 
 export const ServicesMobile = () => {
   const { t } = useTranslation();
@@ -12,9 +12,8 @@ export const ServicesMobile = () => {
   const title2 = 'Development';
   return (
     <Slide left>
-      <div className="main_services">
+      <div className={styles.main_services}>
         <ServicesComponentRow
-          class_name="flex-row servic_mobile"
           img={<MobileApp />}
           mainTitle={title1}
           mainTitle2={title2}
